@@ -1,1 +1,6 @@
+/index.js
+dist/*
 node_modules
+src/**/*.js
+test/**/*.js
+!test/test.js

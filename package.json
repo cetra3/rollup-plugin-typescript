@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-typescript",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Seamless integration between Rollup and TypeScript.",
   "keywords": [
     "rollup-plugin",
@@ -16,12 +16,15 @@
     "rollup": "^0.20.5"
   },
   "scripts": {
+    "build": "rollup -c",
+    "pretest": "npm run build",
     "test": "mocha",
-    "prepublish": "npm run test"
+    "prepublish": "npm run test && cp dist/index.js index.js"
   },
   "dependencies": {
-    "typescript": "1.7.0-dev.20151016",
-    "rollup-pluginutils": "^1.1.0"
+    "object-assign": "^4.0.1",
+    "rollup-pluginutils": "^1.1.0",
+    "typescript": "1.7.0-dev.20151016"
   },
   "repository": {
     "type": "git",

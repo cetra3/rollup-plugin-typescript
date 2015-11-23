@@ -1,6 +1,6 @@
 var assert = require( 'assert' );
 var rollup = require( 'rollup' );
-var typescript = require( '..' );
+var typescript = require( '../dist/index.js' );
 
 process.chdir( __dirname );
 
@@ -24,6 +24,7 @@ describe( 'rollup-plugin-typescript', function () {
 
 			const code = generated.code;
 
+			// We should generate code without `const` and `: number`.
 			assert.ok( code.indexOf( 'number' ) === -1, code );
 			assert.ok( code.indexOf( 'const' ) === -1, code );
 		});
