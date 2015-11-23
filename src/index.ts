@@ -36,6 +36,7 @@ export default function typescript(options: IncludeExclude & ts.CompilerOptions)
 
             return {
                 code: transformed.outputText,
+                // Rollup expects an object so we must parse the string
                 map: JSON.parse(transformed.sourceMapText)
             };
         }
